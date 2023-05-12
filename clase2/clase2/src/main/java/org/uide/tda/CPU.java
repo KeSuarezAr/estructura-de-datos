@@ -1,10 +1,10 @@
-package TDA;
+package org.uide.tda;
 
 public class CPU {
-    private int velocidad;
-    private int nucleos;
-    private String marca;
-    private String modelo;
+    protected int velocidad;
+    protected int nucleos;
+    protected String marca;
+    protected String modelo;
 
     public CPU(int velocidad, int nucleos, String marca, String modelo) {
         this.velocidad = velocidad;

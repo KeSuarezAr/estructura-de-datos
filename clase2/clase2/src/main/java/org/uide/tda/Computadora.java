@@ -1,9 +1,8 @@
-package TDA;
+package org.uide.tda;
 
 public class Computadora {
     protected CPU cpu;
     protected DiscoDuro disco;
-    protected Bateria bateria;
     protected FuenteDePoder fuente;
 
     public Computadora(CPU cpu, DiscoDuro disco, FuenteDePoder fuente) {
@@ -20,10 +19,6 @@ public class Computadora {
         return disco;
     }
 
-    public Bateria getBateria() {
-        return bateria;
-    }
-
     public FuenteDePoder getFuente() {
         return fuente;
     }
@@ -34,10 +29,6 @@ public class Computadora {
 
     public void setDisco(DiscoDuro disco) {
         this.disco = disco;
-    }
-
-    public void setBateria(Bateria bateria) {
-        this.bateria = bateria;
     }
 
     public void setFuente(FuenteDePoder fuente) {

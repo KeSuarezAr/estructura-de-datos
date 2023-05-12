@@ -1,10 +1,10 @@
-package TDA;
+package org.uide.tda;
 
 public class Bateria {
-    private int capacidad;
-    private String marca;
-    private String tipo;
-    private String modelo;
+    protected int capacidad;
+    protected String marca;
+    protected String tipo;
+    protected String modelo;
 
     public Bateria(int capacidad, String marca, String tipo, String modelo) {
         this.capacidad = capacidad;

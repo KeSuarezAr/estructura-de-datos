@@ -1,9 +1,9 @@
-package TDA;
+package org.uide.tda;
 
 public class DiscoDuro {
-    private int capacidad;
-    private String marca;
-    private String modelo;
+    protected int capacidad;
+    protected String marca;
+    protected String modelo;
 
     public DiscoDuro(int capacidad, String marca, String modelo) {
         this.capacidad = capacidad;

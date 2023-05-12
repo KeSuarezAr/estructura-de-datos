@@ -1,10 +1,11 @@
-package org.uide.clase2;
+package org.uide.main;
 
-import TDA.Bateria;
-import TDA.CPU;
-import TDA.Computadora;
-import TDA.DiscoDuro;
-import TDA.FuenteDePoder;
+import org.uide.tda.Laptop;
+import org.uide.tda.CPU;
+import org.uide.tda.Bateria;
+import org.uide.tda.DiscoDuro;
+import org.uide.tda.Computadora;
+import org.uide.tda.FuenteDePoder;
 
 public class Main {
 
@@ -15,8 +16,10 @@ public class Main {
         FuenteDePoder fuente = new FuenteDePoder(400, "Samsung", "S10");
 
         Computadora computadora = new Computadora(cpu, disco, fuente);
+        Laptop laptop = new Laptop(bateria, cpu, disco, fuente);
 
         System.out.println(computadora);
+        System.out.println(laptop);
     }
 
 }

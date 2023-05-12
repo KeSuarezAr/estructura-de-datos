@@ -1,9 +1,9 @@
-package TDA;
+package org.uide.tda;
 
 public class FuenteDePoder {
-    private int watts;
-    private String marca;
-    private String modelo;
+    protected int watts;
+    protected String marca;
+    protected String modelo;
 
     public FuenteDePoder(int watts, String marca, String modelo) {
         this.watts = watts;
