@@ -1,4 +1,4 @@
-package org.uide.clase2;
+package Main;
 
 import TDA.Bateria;
 import TDA.CPU;
