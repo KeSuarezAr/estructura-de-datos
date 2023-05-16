@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Wiki de datos abstractos en HTML</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <h1>Wiki de datos abstractos en HTML</h1>
+    <p>Esta es una wiki sobre los datos abstractos en HTML.</p>
+    <h2>Introducción</h2>
+    <p>
+      Los datos abstractos son una forma de representar información de manera
+      estructurada en HTML. Los datos abstractos se utilizan para describir la
+      estructura de los datos, sin preocuparse por su presentación visual.
+    </p>
+    <h2>Tipos de datos abstractos</h2>
+    <ul>
+      <li>
+        <strong>Lista ordenada:</strong> una lista de elementos ordenados
+        numéricamente o alfabéticamente.
+      </li>
+      <li>
+        <strong>Lista desordenada:</strong> una lista de elementos sin orden
+        específico.
+      </li>
+      <li>
+        <strong>Tabla:</strong> una estructura de datos que organiza la
+        información en filas y columnas.
+      </li>
+      <li>
+        <strong>Formulario:</strong> un conjunto de campos de entrada de datos
+        que se utilizan para recopilar información del usuario.
+      </li>
+    </ul>
+    <h2>Ejemplos de datos abstractos</h2>
+    <h3>Lista ordenada</h3>
+    <ol>
+      <li>Manzanas</li>
+      <li>Plátanos</li>
+      <li>Naranjas</li>
+    </ol>
+    <h3>Tabla</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Edad</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>John</td>
+          <td>25</td>
+        </tr>
+        <tr>
+          <td>Jane</td>
+          <td>30</td>
+        </tr>
+        <tr>
+          <td>Bob</td>
+          <td>40</td>
+        </tr>
+      </tbody>
+    </table>
+    <h3>Formulario</h3>
+    <form id="myForm">
+      <label for="name">Nombre:</label>
+      <input type="text" id="name" name="name" /><br /><br />
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" /><br /><br />
+      <label for="message">Mensaje:</label><br />
+      <textarea id="message" name="message"></textarea><br /><br />
+      <input type="submit" value="Enviar" />
+    </form>
+    <h3 id="output"></h3>
+
+    <script src="index.js"></script>
+  </body>
+</html>
