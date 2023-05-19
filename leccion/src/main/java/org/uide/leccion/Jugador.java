@@ -3,14 +3,14 @@ package org.uide.leccion;
 public class Jugador extends Persona {
 
     private int numeroCamiseta;
-    private String posicion;
+    private String[] posiciones;
     private String nacionalidad;
 
     public Jugador(String nombre, String apellido, int edad, String direccion, String telefono, String correo,
-            int numeroCamiseta, String posicion, String nacionalidad) {
+            int numeroCamiseta, String[] posiciones, String nacionalidad) {
         super(nombre, apellido, edad, direccion, telefono, correo);
         this.numeroCamiseta = numeroCamiseta;
-        this.posicion = posicion;
+        this.posiciones = posiciones;
         this.nacionalidad = nacionalidad;
     }
 
@@ -22,12 +22,12 @@ public class Jugador extends Persona {
         return numeroCamiseta;
     }
 
-    public void setPosicion(String posicion) {
-        this.posicion = posicion;
+    public void setPosiciones(String[] posiciones) {
+        this.posiciones = posiciones;
     }
 
-    public String getPosicion() {
-        return posicion;
+    public String[] getPosiciones() {
+        return posiciones;
     }
 
     public void setNacionalidad(String nacionalidad) {
@@ -40,7 +40,7 @@ public class Jugador extends Persona {
 
     @Override
     public String toString() {
-        return super.toString() + ", Numero de Camiseta=" + numeroCamiseta + ", Posicion=" + posicion
+        return super.toString() + ", Numero de Camiseta=" + numeroCamiseta + ", Posicion=" + posiciones
                 + ", Nacionalidad="
                 + nacionalidad;
     }

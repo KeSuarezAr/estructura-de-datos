@@ -8,7 +8,7 @@ public class Defensa extends Jugador {
     private int pases;
 
     public Defensa(String nombre, String apellido, int edad, String direccion, String telefono, String correo,
-            int numeroCamiseta, String posicion, String nacionalidad, String piernaHabil, String estiloJuego,
+            int numeroCamiseta, String[] posicion, String nacionalidad, String piernaHabil, String estiloJuego,
             int asistencias, int goles, int pases) {
         super(nombre, apellido, edad, direccion, telefono, correo, numeroCamiseta, posicion, nacionalidad);
         this.piernaHabil = piernaHabil;

@@ -1,19 +1,21 @@
 package org.uide.leccion;
 
-public class Portero extends Jugador {
+public class Delantero extends Jugador {
     private String piernaHabil;
     private String estiloJuego;
+    private int asistencias;
     private int goles;
-    private int penales;
+    private int pases;
 
-    public Portero(String nombre, String apellido, int edad, String direccion, String telefono, String correo,
+    public Delantero(String nombre, String apellido, int edad, String direccion, String telefono, String correo,
             int numeroCamiseta, String[] posicion, String nacionalidad, String piernaHabil, String estiloJuego,
-            int goles, int penales) {
+            int asistencias, int goles, int pases) {
         super(nombre, apellido, edad, direccion, telefono, correo, numeroCamiseta, posicion, nacionalidad);
         this.piernaHabil = piernaHabil;
         this.estiloJuego = estiloJuego;
+        this.asistencias = asistencias;
         this.goles = goles;
-        this.penales = penales;
+        this.pases = pases;
     }
 
     public void setPiernaHabil(String piernaHabil) {
@@ -32,6 +34,14 @@ public class Portero extends Jugador {
         return estiloJuego;
     }
 
+    public void setAsistencias(int asistencias) {
+        this.asistencias = asistencias;
+    }
+
+    public int getAsistencias() {
+        return asistencias;
+    }
+
     public void setGoles(int goles) {
         this.goles = goles;
     }
@@ -40,18 +50,17 @@ public class Portero extends Jugador {
         return goles;
     }
 
-    public void setPenales(int penales) {
-        this.penales = penales;
+    public void setPases(int pases) {
+        this.pases = pases;
     }
 
-    public int getPenales() {
-        return penales;
+    public int getPases() {
+        return pases;
     }
 
     @Override
     public String toString() {
-        return super.toString() + ", Pierna Habil=" + piernaHabil + ", Estilo de Juego=" + estiloJuego
-                + ", Goles Recibidos=" + goles + ", Penales Recibidos=" + penales;
+        return super.toString() + "Pierna Hábil: " + piernaHabil + "Estilo de Juego: " + estiloJuego
+                + "Asistencias: " + asistencias + "Goles: " + goles + "Pases: " + pases;
     }
-
 }
