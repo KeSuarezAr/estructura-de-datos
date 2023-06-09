@@ -35,7 +35,6 @@ public class Cliente {
 
     public String getCedula() {
         return this.nombre;
-
     }
 
     public void setCedula(String cedula) {
@@ -58,5 +57,11 @@ public class Cliente {
 
     public void setDireccion(String direccion) {
         this.direccion = direccion;
+    }
+
+    @Override
+    public String toString() {
+        return "nombre=" + nombre + ", apellido=" + apellido + ", cedula=" + cedula + ", telefono="
+                + telefono + ", direccion=" + direccion;
     }
 }
