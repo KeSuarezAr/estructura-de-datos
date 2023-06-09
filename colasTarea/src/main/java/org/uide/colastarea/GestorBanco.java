@@ -5,9 +5,11 @@ public class GestorBanco {
     public GestorBanco() {
     }
 
-    public void listarClientes() {
+    public Cliente listarClientes() {
+        return
     }
 
     public void agregarCliente(Cliente cliente) {
+
     }
 }
