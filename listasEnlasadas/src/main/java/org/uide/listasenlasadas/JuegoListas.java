@@ -1,52 +1,133 @@
 package org.uide.listasenlasadas;
 
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.LinkedList;
 
 public class JuegoListas extends javax.swing.JFrame implements KeyListener, Runnable {
 
-    private LinkedList<Punto> lista = new LinkedList<Punto>();
+    private final LinkedList<Punto> lista = new LinkedList<Punto>();
     private int columna, fila;
     private int colfruta, filfruta;
     private boolean juegoactivo;
     private Direccion direccion = Direccion.up;
-    private Thread hilo;
+    private final Thread hilo;
     private int longitudVibora;
+    private Image imagen;
+    private Graphics graficos;
 
     @Override
     public void run() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        while (juegoactivo) {
+            try {
+                Thread.sleep(100);
+                switch (direccion) {
+                    case left:
+                        columna--;
+                        break;
+                    case right:
+                        columna++;
+                        break;
+                    case up:
+                        fila--;
+                        break;
+                    case down:
+                        fila++;
+                        break;
+                }
+                repaint();
+                sePisa();
+                if (comeFruta() == false && longitudVibora == 0) {
+                    lista.removeLast();
+                    longitudVibora--;
+                } else {
+                    if (longitudVibora > 0) {
+                        longitudVibora--;
+                    }
+                }
+                System.out.println(columna + " " + fila);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     @Override
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-            direccion = Direccion.left;
+            if (direccion != Direccion.right) {
+                direccion = Direccion.left;
+            }
         }
         if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-            direccion = Direccion.right;
+            if (direccion != Direccion.left) {
+                direccion = Direccion.right;
+            }
         }
         if (e.getKeyCode() == KeyEvent.VK_UP) {
-            direccion = Direccion.up;
+            if (direccion != Direccion.down)
+                direccion = Direccion.up;
         }
         if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-            direccion = Direccion.down;
+            if (direccion != Direccion.up)
+                direccion = Direccion.down;
         }
     }
 
     @Override
     public void keyTyped(KeyEvent e) {
-        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
-        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     private enum Direccion {
         up, down, left, right
+    }
+
+    private void sePisa() {
+        for (int i = 1; i < lista.size(); i++) {
+            if (lista.get(i).getColumna() == columna && lista.get(i).getFila() == fila) {
+                juegoactivo = false;
+                setTitle("Perdiste :(");
+            }
+        }
+    }
+
+    private boolean comeFruta() {
+        if (columna == colfruta && fila == filfruta) {
+            colfruta = (int) (Math.random() * 50);
+            filfruta = (int) (Math.random() * 50);
+            this.longitudVibora = 10;
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public void paint(Graphics g) {
+        super.paint(g);
+        if (!lista.isEmpty()) {
+            if (imagen == null) {
+                imagen = createImage(this.getSize().width, this.getSize().height);
+                graficos = imagen.getGraphics();
+            }
+
+            graficos.clearRect(0, 0, getSize().width, getSize().height);
+            graficos.setColor(Color.RED);
+            graficos.drawRect(20, 50, 500, 500);
+            for (Punto punto : lista) {
+                graficos.fillRect(punto.getColumna() * 10 + 20, punto.getFila() * 10 + 20, 8, 8);
+            }
+            graficos.setColor(Color.YELLOW);
+            graficos.fillRect(colfruta * 10 + 20, filfruta * 10 + 20, 8, 8);
+            g.drawImage(imagen, 0, 0, this);
+        }
+
     }
 
     public JuegoListas() {
@@ -57,7 +138,7 @@ public class JuegoListas extends javax.swing.JFrame implements KeyListener, Runn
         lista.add(new Punto(2, 20));
         lista.add(new Punto(1, 20));
 
-        columna = 3;
+        columna = 30;
         fila = 20;
 
         colfruta = (int) (Math.random() * 40);
@@ -75,6 +156,7 @@ public class JuegoListas extends javax.swing.JFrame implements KeyListener, Runn
      * regenerated by the Form Editor.
      */
     @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
     // Code">//GEN-BEGIN:initComponents
     private void initComponents() {

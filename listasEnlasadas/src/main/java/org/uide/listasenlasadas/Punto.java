@@ -1,11 +1,18 @@
 package org.uide.listasenlasadas;
 
 public class Punto {
-    private int x, y;
+    private int columna, fila;
 
-    public Punto(int x, int y) {
-        this.x = x;
-        this.y = y;
+    public Punto(int columna, int fila) {
+        this.columna = columna;
+        this.fila = fila;
     }
 
+    public int getColumna() {
+        return columna;
+    }
+
+    public int getFila() {
+        return fila;
+    }
 }
